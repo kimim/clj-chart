@@ -10,14 +10,18 @@
 
 (defn bar
   "Create Bar chart"
-  [{:keys [title width height x-axis y-axis series]
-    :or {title "Bubble Chart" width 600 height 400}}]
+  [{:keys [title width height x-axis y-axis series x-axis-max-label-count]
+    :or {title "Bubble Chart" width 600 height 400 x-axis-max-label-count 20}}]
   (let [chart (-> (CategoryChartBuilder.)
                   (.width width)
                   (.height height)
                   (.xAxisTitle x-axis)
                   (.yAxisTitle y-axis)
                   (.build))]
+    (-> chart
+        (.getStyler)
+        ;; avoid label overlap
+        (.setXAxisMaxLabelCount x-axis-max-label-count))
     (doseq [serie series]
       (.addSeries chart
                   (:name serie)
