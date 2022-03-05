@@ -1,4 +1,4 @@
-(defproject kimim/clj-chart "0.1.7"
+(defproject io.github.kimim/clj-chart "0.1.1"
   :description "A clojure lib wraps XChart"
   :url "http://github.com/kimim/clj-chart"
   :license {:name "Apache License, Version 2.0"

@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2022-03-01 Tue 11:34 -->
+<!-- 2022-03-05 Sat 08:36 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>clj-chart demo</title>
@@ -201,25 +201,30 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org285c234">1. Histogram</a></li>
-<li><a href="#org958695e">2. Quick Chart</a></li>
-<li><a href="#org8647277">3. Area Chart</a></li>
-<li><a href="#org4a9eb1f">4. Pie Chart</a></li>
-<li><a href="#orgf1e9b4e">5. Donut Chart</a></li>
-<li><a href="#orga4460d0">6. Scatter Chart</a></li>
-<li><a href="#orgffaee24">7. Bubble Chart</a></li>
-<li><a href="#orgf592205">8. Bar Chart</a></li>
-<li><a href="#org0aac2de">9. Line Chart</a></li>
-<li><a href="#orgaa75a81">10. Logarithmic Line Chart</a></li>
+<li><a href="#org0945a86">1. Histogram</a></li>
+<li><a href="#org7d9e6ab">2. Quick Chart</a></li>
+<li><a href="#org2317f49">3. Area Chart</a></li>
+<li><a href="#orgbd56178">4. Pie Chart</a></li>
+<li><a href="#org49e5dc5">5. Donut Chart</a></li>
+<li><a href="#org902fce2">6. Scatter Chart</a></li>
+<li><a href="#orgf12a71e">7. Bubble Chart</a></li>
+<li><a href="#org7a4baa0">8. Bar Chart</a></li>
+<li><a href="#org0314e8a">9. Line Chart</a></li>
+<li><a href="#orgda3f343">10. Logarithmic Line Chart</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org285c234" class="outline-2">
-<h2 id="org285c234"><span class="section-number-2">1.</span> Histogram</h2>
+<div id="org65e5c0b" class="figure">
+<p><a href="https://clojars.org/io.github.kimim/clj-chart"><img src="https://img.shields.io/clojars/v/io.github.kimim/clj-chart.svg" alt="clj-chart.svg" class="org-svg" /></a>
+</p>
+</div>
+
+<div id="outline-container-org0945a86" class="outline-2">
+<h2 id="org0945a86"><span class="section-number-2">1.</span> Histogram</h2>
 <div class="outline-text-2" id="text-1">
 <div class="org-src-container">
-<pre class="src src-clojure"><span style="color: #707183;">(</span><span style="color: #7F0055; font-weight: bold;">require</span> '<span style="color: #7388d6;">[</span>clj-chart.histogram <span style="color: #110099;">:refer</span> <span style="color: #110099;">:all</span><span style="color: #7388d6;">]</span><span style="color: #707183;">)</span>
+<pre class="src src-clojure"><span style="color: #707183;">(</span><span style="color: #7F0055; font-weight: bold;">require</span> '<span style="color: #7388d6;">[</span>clj-chart.chart <span style="color: #110099;">:refer</span> <span style="color: #110099;">:all</span><span style="color: #7388d6;">]</span><span style="color: #707183;">)</span>
 <span style="color: #707183;">(</span><span style="color: #7F0055; font-weight: bold;">require</span> '<span style="color: #7388d6;">[</span>clj-chart.plot <span style="color: #110099;">:refer</span> <span style="color: #110099;">:all</span><span style="color: #7388d6;">]</span><span style="color: #707183;">)</span>
 <span style="color: #707183;">(</span><span style="color: #7F0055; font-weight: bold;">let</span> <span style="color: #7388d6;">[</span>chart <span style="color: #909183;">(</span>histogram <span style="color: #709870;">{</span><span style="color: #110099;">:title</span> <span style="color: #2A00FF;">"Hello Hisogram Chart"</span>
                         <span style="color: #110099;">:x-axis</span> <span style="color: #2A00FF;">"X"</span> <span style="color: #110099;">:y-axis</span> <span style="color: #2A00FF;">"Y"</span>
@@ -234,15 +239,15 @@
 </div>
 
 
-<div id="org7b2f580" class="figure">
+<div id="org77ce472" class="figure">
 <p><img src="figures/histogram.svg" alt="histogram.svg" class="org-svg" />
 </p>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org958695e" class="outline-2">
-<h2 id="org958695e"><span class="section-number-2">2.</span> Quick Chart</h2>
+<div id="outline-container-org7d9e6ab" class="outline-2">
+<h2 id="org7d9e6ab"><span class="section-number-2">2.</span> Quick Chart</h2>
 <div class="outline-text-2" id="text-2">
 <div class="org-src-container">
 <pre class="src src-clojure"><span style="color: #707183;">(</span><span style="color: #7F0055; font-weight: bold;">use</span> '<span style="color: #7388d6;">[</span>clj-chart.quick<span style="color: #7388d6;">]</span><span style="color: #707183;">)</span>
@@ -255,18 +260,18 @@
 </div>
 
 
-<div id="org1259c76" class="figure">
+<div id="org3c0b47b" class="figure">
 <p><img src="figures/quickchart.svg" alt="quickchart.svg" class="org-svg" />
 </p>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org8647277" class="outline-2">
-<h2 id="org8647277"><span class="section-number-2">3.</span> Area Chart</h2>
+<div id="outline-container-org2317f49" class="outline-2">
+<h2 id="org2317f49"><span class="section-number-2">3.</span> Area Chart</h2>
 <div class="outline-text-2" id="text-3">
 <div class="org-src-container">
-<pre class="src src-clojure"><span style="color: #707183;">(</span><span style="color: #7F0055; font-weight: bold;">use</span> '<span style="color: #7388d6;">[</span>clj-chart.area<span style="color: #7388d6;">]</span><span style="color: #707183;">)</span>
+<pre class="src src-clojure"><span style="color: #707183;">(</span><span style="color: #7F0055; font-weight: bold;">use</span> '<span style="color: #7388d6;">[</span>clj-chart.chart<span style="color: #7388d6;">]</span><span style="color: #707183;">)</span>
 <span style="color: #707183;">(</span><span style="color: #7F0055; font-weight: bold;">use</span> '<span style="color: #7388d6;">[</span>clj-chart.plot<span style="color: #7388d6;">]</span><span style="color: #707183;">)</span>
 <span style="color: #707183;">(</span><span style="color: #7F0055; font-weight: bold;">let</span> <span style="color: #7388d6;">[</span>chart <span style="color: #909183;">(</span>area <span style="color: #709870;">{</span><span style="color: #110099;">:title</span> <span style="color: #2A00FF;">"Hello Area Chart"</span>
                    <span style="color: #110099;">:x-axis</span> <span style="color: #2A00FF;">"X"</span> <span style="color: #110099;">:y-axis</span> <span style="color: #2A00FF;">"Y"</span>
@@ -281,18 +286,18 @@
 </div>
 
 
-<div id="org2e01e63" class="figure">
+<div id="org2b08867" class="figure">
 <p><img src="figures/areachart.svg" alt="areachart.svg" class="org-svg" />
 </p>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org4a9eb1f" class="outline-2">
-<h2 id="org4a9eb1f"><span class="section-number-2">4.</span> Pie Chart</h2>
+<div id="outline-container-orgbd56178" class="outline-2">
+<h2 id="orgbd56178"><span class="section-number-2">4.</span> Pie Chart</h2>
 <div class="outline-text-2" id="text-4">
 <div class="org-src-container">
-<pre class="src src-clojure"><span style="color: #707183;">(</span><span style="color: #7F0055; font-weight: bold;">use</span> '<span style="color: #7388d6;">[</span>clj-chart.pie<span style="color: #7388d6;">]</span><span style="color: #707183;">)</span>
+<pre class="src src-clojure"><span style="color: #707183;">(</span><span style="color: #7F0055; font-weight: bold;">use</span> '<span style="color: #7388d6;">[</span>clj-chart.chart<span style="color: #7388d6;">]</span><span style="color: #707183;">)</span>
 <span style="color: #707183;">(</span><span style="color: #7F0055; font-weight: bold;">use</span> '<span style="color: #7388d6;">[</span>clj-chart.plot<span style="color: #7388d6;">]</span><span style="color: #707183;">)</span>
 <span style="color: #707183;">(</span><span style="color: #7F0055; font-weight: bold;">let</span> <span style="color: #7388d6;">[</span>chart <span style="color: #909183;">(</span>pie <span style="color: #709870;">{</span><span style="color: #110099;">:title</span> <span style="color: #2A00FF;">"Hello Pie Chart"</span>
                    <span style="color: #110099;">:series</span> <span style="color: #907373;">[</span><span style="color: #6276ba;">{</span><span style="color: #110099;">:name</span> <span style="color: #2A00FF;">"A"</span> <span style="color: #110099;">:value</span> 10<span style="color: #6276ba;">}</span>
@@ -302,18 +307,18 @@
 </div>
 
 
-<div id="org536c4dc" class="figure">
+<div id="orgd988498" class="figure">
 <p><img src="figures/piechart.svg" alt="piechart.svg" class="org-svg" />
 </p>
 </div>
 </div>
 </div>
 
-<div id="outline-container-orgf1e9b4e" class="outline-2">
-<h2 id="orgf1e9b4e"><span class="section-number-2">5.</span> Donut Chart</h2>
+<div id="outline-container-org49e5dc5" class="outline-2">
+<h2 id="org49e5dc5"><span class="section-number-2">5.</span> Donut Chart</h2>
 <div class="outline-text-2" id="text-5">
 <div class="org-src-container">
-<pre class="src src-clojure"><span style="color: #707183;">(</span><span style="color: #7F0055; font-weight: bold;">use</span> '<span style="color: #7388d6;">[</span>clj-chart.donut<span style="color: #7388d6;">]</span><span style="color: #707183;">)</span>
+<pre class="src src-clojure"><span style="color: #707183;">(</span><span style="color: #7F0055; font-weight: bold;">use</span> '<span style="color: #7388d6;">[</span>clj-chart.chart<span style="color: #7388d6;">]</span><span style="color: #707183;">)</span>
 <span style="color: #707183;">(</span><span style="color: #7F0055; font-weight: bold;">use</span> '<span style="color: #7388d6;">[</span>clj-chart.plot<span style="color: #7388d6;">]</span><span style="color: #707183;">)</span>
 <span style="color: #707183;">(</span><span style="color: #7F0055; font-weight: bold;">let</span> <span style="color: #7388d6;">[</span>chart <span style="color: #909183;">(</span>donut <span style="color: #709870;">{</span><span style="color: #110099;">:title</span> <span style="color: #2A00FF;">"Hello Pie Chart"</span>
                    <span style="color: #110099;">:series</span> <span style="color: #907373;">[</span><span style="color: #6276ba;">{</span><span style="color: #110099;">:name</span> <span style="color: #2A00FF;">"A"</span> <span style="color: #110099;">:value</span> 10<span style="color: #6276ba;">}</span>
@@ -323,18 +328,18 @@
 </div>
 
 
-<div id="org18c5037" class="figure">
+<div id="orgb0faa6a" class="figure">
 <p><img src="figures/donutchart.svg" alt="donutchart.svg" class="org-svg" />
 </p>
 </div>
 </div>
 </div>
 
-<div id="outline-container-orga4460d0" class="outline-2">
-<h2 id="orga4460d0"><span class="section-number-2">6.</span> Scatter Chart</h2>
+<div id="outline-container-org902fce2" class="outline-2">
+<h2 id="org902fce2"><span class="section-number-2">6.</span> Scatter Chart</h2>
 <div class="outline-text-2" id="text-6">
 <div class="org-src-container">
-<pre class="src src-clojure"><span style="color: #707183;">(</span><span style="color: #7F0055; font-weight: bold;">use</span> '<span style="color: #7388d6;">[</span>clj-chart.scatter<span style="color: #7388d6;">]</span><span style="color: #707183;">)</span>
+<pre class="src src-clojure"><span style="color: #707183;">(</span><span style="color: #7F0055; font-weight: bold;">use</span> '<span style="color: #7388d6;">[</span>clj-chart.chart<span style="color: #7388d6;">]</span><span style="color: #707183;">)</span>
 <span style="color: #707183;">(</span><span style="color: #7F0055; font-weight: bold;">use</span> '<span style="color: #7388d6;">[</span>clj-chart.plot<span style="color: #7388d6;">]</span><span style="color: #707183;">)</span>
 <span style="color: #707183;">(</span><span style="color: #7F0055; font-weight: bold;">let</span> <span style="color: #7388d6;">[</span>chart <span style="color: #909183;">(</span>scatter <span style="color: #709870;">{</span><span style="color: #110099;">:title</span> <span style="color: #2A00FF;">"Hello Scatter Chart"</span>
                       <span style="color: #110099;">:series</span> <span style="color: #907373;">[</span><span style="color: #6276ba;">{</span><span style="color: #110099;">:name</span> <span style="color: #2A00FF;">"A"</span>
@@ -348,18 +353,18 @@
 </div>
 
 
-<div id="org22d7be8" class="figure">
+<div id="org363c201" class="figure">
 <p><img src="figures/scatterchart.svg" alt="scatterchart.svg" class="org-svg" />
 </p>
 </div>
 </div>
 </div>
 
-<div id="outline-container-orgffaee24" class="outline-2">
-<h2 id="orgffaee24"><span class="section-number-2">7.</span> Bubble Chart</h2>
+<div id="outline-container-orgf12a71e" class="outline-2">
+<h2 id="orgf12a71e"><span class="section-number-2">7.</span> Bubble Chart</h2>
 <div class="outline-text-2" id="text-7">
 <div class="org-src-container">
-<pre class="src src-clojure"><span style="color: #707183;">(</span><span style="color: #7F0055; font-weight: bold;">use</span> '<span style="color: #7388d6;">[</span>clj-chart.bubble<span style="color: #7388d6;">]</span><span style="color: #707183;">)</span>
+<pre class="src src-clojure"><span style="color: #707183;">(</span><span style="color: #7F0055; font-weight: bold;">use</span> '<span style="color: #7388d6;">[</span>clj-chart.chart<span style="color: #7388d6;">]</span><span style="color: #707183;">)</span>
 <span style="color: #707183;">(</span><span style="color: #7F0055; font-weight: bold;">use</span> '<span style="color: #7388d6;">[</span>clj-chart.plot<span style="color: #7388d6;">]</span><span style="color: #707183;">)</span>
 <span style="color: #707183;">(</span><span style="color: #7F0055; font-weight: bold;">let</span> <span style="color: #7388d6;">[</span>chart <span style="color: #909183;">(</span>bubble <span style="color: #709870;">{</span><span style="color: #110099;">:title</span> <span style="color: #2A00FF;">"Hello Bubble Chart"</span>
                       <span style="color: #110099;">:series</span> <span style="color: #907373;">[</span><span style="color: #6276ba;">{</span><span style="color: #110099;">:name</span> <span style="color: #2A00FF;">"A"</span>
@@ -375,18 +380,18 @@
 </div>
 
 
-<div id="org37cf609" class="figure">
+<div id="orgc2ebdf5" class="figure">
 <p><img src="figures/bubblechart.svg" alt="bubblechart.svg" class="org-svg" />
 </p>
 </div>
 </div>
 </div>
 
-<div id="outline-container-orgf592205" class="outline-2">
-<h2 id="orgf592205"><span class="section-number-2">8.</span> Bar Chart</h2>
+<div id="outline-container-org7a4baa0" class="outline-2">
+<h2 id="org7a4baa0"><span class="section-number-2">8.</span> Bar Chart</h2>
 <div class="outline-text-2" id="text-8">
 <div class="org-src-container">
-<pre class="src src-clojure"><span style="color: #707183;">(</span><span style="color: #7F0055; font-weight: bold;">use</span> '<span style="color: #7388d6;">[</span>clj-chart.bar<span style="color: #7388d6;">]</span><span style="color: #707183;">)</span>
+<pre class="src src-clojure"><span style="color: #707183;">(</span><span style="color: #7F0055; font-weight: bold;">use</span> '<span style="color: #7388d6;">[</span>clj-chart.chart<span style="color: #7388d6;">]</span><span style="color: #707183;">)</span>
 <span style="color: #707183;">(</span><span style="color: #7F0055; font-weight: bold;">use</span> '<span style="color: #7388d6;">[</span>clj-chart.plot<span style="color: #7388d6;">]</span><span style="color: #707183;">)</span>
 <span style="color: #707183;">(</span><span style="color: #7F0055; font-weight: bold;">let</span> <span style="color: #7388d6;">[</span>chart <span style="color: #909183;">(</span>bar <span style="color: #709870;">{</span><span style="color: #110099;">:title</span> <span style="color: #2A00FF;">"Hello Bar Chart"</span>
                       <span style="color: #110099;">:series</span> <span style="color: #907373;">[</span><span style="color: #6276ba;">{</span><span style="color: #110099;">:name</span> <span style="color: #2A00FF;">"A"</span>
@@ -400,18 +405,18 @@
 </div>
 
 
-<div id="org17f19d8" class="figure">
+<div id="orge76d6ab" class="figure">
 <p><img src="figures/barchart.svg" alt="barchart.svg" class="org-svg" />
 </p>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org0aac2de" class="outline-2">
-<h2 id="org0aac2de"><span class="section-number-2">9.</span> Line Chart</h2>
+<div id="outline-container-org0314e8a" class="outline-2">
+<h2 id="org0314e8a"><span class="section-number-2">9.</span> Line Chart</h2>
 <div class="outline-text-2" id="text-9">
 <div class="org-src-container">
-<pre class="src src-clojure"><span style="color: #707183;">(</span><span style="color: #7F0055; font-weight: bold;">use</span> '<span style="color: #7388d6;">[</span>clj-chart.line<span style="color: #7388d6;">]</span><span style="color: #707183;">)</span>
+<pre class="src src-clojure"><span style="color: #707183;">(</span><span style="color: #7F0055; font-weight: bold;">use</span> '<span style="color: #7388d6;">[</span>clj-chart.chart<span style="color: #7388d6;">]</span><span style="color: #707183;">)</span>
 <span style="color: #707183;">(</span><span style="color: #7F0055; font-weight: bold;">use</span> '<span style="color: #7388d6;">[</span>clj-chart.plot<span style="color: #7388d6;">]</span><span style="color: #707183;">)</span>
 <span style="color: #707183;">(</span><span style="color: #7F0055; font-weight: bold;">let</span> <span style="color: #7388d6;">[</span>chart <span style="color: #909183;">(</span>line <span style="color: #709870;">{</span><span style="color: #110099;">:title</span> <span style="color: #2A00FF;">"Hello Line Chart"</span>
                       <span style="color: #110099;">:series</span> <span style="color: #907373;">[</span><span style="color: #6276ba;">{</span><span style="color: #110099;">:name</span> <span style="color: #2A00FF;">"A"</span>
@@ -425,18 +430,18 @@
 </div>
 
 
-<div id="org98230fc" class="figure">
+<div id="org3733b40" class="figure">
 <p><img src="figures/linechart.svg" alt="linechart.svg" class="org-svg" />
 </p>
 </div>
 </div>
 </div>
 
-<div id="outline-container-orgaa75a81" class="outline-2">
-<h2 id="orgaa75a81"><span class="section-number-2">10.</span> Logarithmic Line Chart</h2>
+<div id="outline-container-orgda3f343" class="outline-2">
+<h2 id="orgda3f343"><span class="section-number-2">10.</span> Logarithmic Line Chart</h2>
 <div class="outline-text-2" id="text-10">
 <div class="org-src-container">
-<pre class="src src-clojure"><span style="color: #707183;">(</span><span style="color: #7F0055; font-weight: bold;">use</span> '<span style="color: #7388d6;">[</span>clj-chart.logarithmic-line<span style="color: #7388d6;">]</span><span style="color: #707183;">)</span>
+<pre class="src src-clojure"><span style="color: #707183;">(</span><span style="color: #7F0055; font-weight: bold;">use</span> '<span style="color: #7388d6;">[</span>clj-chart.chart<span style="color: #7388d6;">]</span><span style="color: #707183;">)</span>
 <span style="color: #707183;">(</span><span style="color: #7F0055; font-weight: bold;">use</span> '<span style="color: #7388d6;">[</span>clj-chart.plot<span style="color: #7388d6;">]</span><span style="color: #707183;">)</span>
 <span style="color: #707183;">(</span><span style="color: #7F0055; font-weight: bold;">let</span> <span style="color: #7388d6;">[</span>chart <span style="color: #909183;">(</span>logarithmic-line <span style="color: #709870;">{</span><span style="color: #110099;">:title</span> <span style="color: #2A00FF;">"Hello Logarithmic Line Chart"</span>
                                <span style="color: #110099;">:series</span> <span style="color: #907373;">[</span><span style="color: #6276ba;">{</span><span style="color: #110099;">:name</span> <span style="color: #2A00FF;">"A"</span>
@@ -450,7 +455,7 @@
 </div>
 
 
-<div id="orgc2b1e25" class="figure">
+<div id="orga96f93b" class="figure">
 <p><img src="figures/logarithmiclinechart.svg" alt="logarithmiclinechart.svg" class="org-svg" />
 </p>
 </div>
@@ -459,7 +464,7 @@
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Kimi Ma</p>
-<p class="date">Created: 2022-03-01 Tue 11:34</p>
+<p class="date">Created: 2022-03-05 Sat 08:36</p>
 </div>
 </body>
 </html>
