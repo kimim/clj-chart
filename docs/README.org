@@ -125,12 +125,12 @@
 (use '[clj-chart.chart])
 (use '[clj-chart.plot])
 (let [chart (bar {:title "Hello Bar Chart"
-                      :series [{:name "A"
-                                :xs [1 2 3]
-                                :ys [3 4 5]}
-                               {:name "B"
-                                :xs [1 2 3]
-                                :ys [3 5 7]}]})]
+                  :series [{:name "A"
+                            :xs [1 2 3]
+                            :ys [3 4 5]}
+                           {:name "B"
+                            :xs [1 2 3]
+                            :ys [3 5 7]}]})]
   (store! chart nil "docs/figures/barchart.svg"))
 #+end_src
 
@@ -149,6 +149,23 @@
 
 #+RESULTS:
 [[file:figures/sparsebarchart.svg]]
+
+* Step Chart
+#+begin_src clojure :results file graphics replace :output-dir figures :file stepchart.svg :exports both :eval no-export
+(use '[clj-chart.chart])
+(use '[clj-chart.plot])
+(let [chart (step {:title "Hello Step Chart"
+                      :series [{:name "A"
+                                :xs [1 2 3]
+                                :ys [3 4 5]}
+                               {:name "B"
+                                :xs [1 2 3]
+                                :ys [3 9 7]}]})]
+  (store! chart nil "docs/figures/stepchart.svg"))
+#+end_src
+
+#+RESULTS:
+[[file:figures/stepchart.svg]]
 
 * Line Chart
 

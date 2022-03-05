@@ -1,6 +1,8 @@
 (ns clj-chart.chart
-  (:require [clj-chart.base.xychart :as xychart])
-  (:import [org.knowm.xchart
+  (:require
+   [clj-chart.base :as base])
+  (:import [java.awt Color]
+           [org.knowm.xchart
             CategoryChartBuilder
             BubbleChartBuilder
             PieChartBuilder
@@ -10,46 +12,45 @@
 
 (defn bar
   "Create Bar chart"
-  [{:keys [title width height x-axis y-axis series x-axis-max-label-count]
-    :or {title "Bubble Chart" width 600 height 400 x-axis-max-label-count 20}}]
-  (let [chart (-> (CategoryChartBuilder.)
-                  (.width width)
-                  (.height height)
-                  (.xAxisTitle x-axis)
-                  (.yAxisTitle y-axis)
-                  (.build))]
-    (-> chart
-        (.getStyler)
-        ;; avoid label overlap
-        (.setXAxisMaxLabelCount x-axis-max-label-count))
-    (doseq [serie series]
-      (.addSeries chart
-                  (:name serie)
-                  (:xs serie)
-                  (:ys serie)))
-    chart))
+  [{:keys [title width height x-axis y-axis series]
+    :or {title "Bar Chart" width 600 height 400 x-axis "X" y-axis "Y"}}]
+  (base/base-chart-category {:title title :width width :height height
+                             :x-axis x-axis :y-axis y-axis
+                             :style {:series-style :bar}
+                             :series series}))
+
+(defn step
+  "Create Step chart"
+  [{:keys [title width height x-axis y-axis series]
+    :or {title "Step Chart" width 600 height 400 x-axis "X" y-axis "Y"}}]
+  (base/base-chart-category {:title title :width width :height height
+                             :x-axis x-axis :y-axis y-axis
+                             :style {:series-style :step
+                                     :overlap true}
+                             :series
+                             (map #(assoc % :style {:fill-color (Color. 0 0 0 0)}) series)}))
 
 (defn line
   "Create Line chart"
   [{:keys [title width height series]
     :or {title "Line Chart" width 600 height 400}}]
-  (xychart/xychart {:title title
-                    :width width
-                    :series-render-style XYSeries$XYSeriesRenderStyle/Line
-                    :marker-size 10
-                    :height height
-                    :series series}))
+  (base/base-chart-xy {:title title
+                       :width width
+                       :series-render-style XYSeries$XYSeriesRenderStyle/Line
+                       :marker-size 10
+                       :height height
+                       :series series}))
 
 (defn area
   "Create area chart"
   [{:keys [title x-axis y-axis width height series]
     :or {title "Area Chart" x-axis "X" y-axis "Y" width 600 height 400}}]
-  (xychart/xychart {:title title
-                    :width width
-                    :series-render-style XYSeries$XYSeriesRenderStyle/Area
-                    :marker-size 10
-                    :height height
-                    :series series}))
+  (base/base-chart-xy {:title title
+                       :width width
+                       :series-render-style XYSeries$XYSeriesRenderStyle/Area
+                       :marker-size 10
+                       :height height
+                       :series series}))
 
 (defn bubble
   "Create Bubble chart"
@@ -107,12 +108,12 @@
   "Create Scatter chart"
   [{:keys [title width height series]
     :or {title "Scatter Chart" width 600 height 400}}]
-  (xychart/xychart {:title title
-                    :width width
-                    :series-render-style XYSeries$XYSeriesRenderStyle/Scatter
-                    :marker-size 10
-                    :height height
-                    :series series}))
+  (base/base-chart-xy {:title title
+                       :width width
+                       :series-render-style XYSeries$XYSeriesRenderStyle/Scatter
+                       :marker-size 10
+                       :height height
+                       :series series}))
 
 (defn histogram
   "Create a histogram chart"
@@ -139,10 +140,10 @@
   "Create Logarithmic Line chart"
   [{:keys [title width height series]
     :or {title "Logarithmic Chart" width 600 height 400}}]
-  (xychart/xychart {:title title
-                    :width width
-                    :series-render-style XYSeries$XYSeriesRenderStyle/Line
-                    :y-axis-logarithmic true
-                    :marker-size 10
-                    :height height
-                    :series series}))
+  (base/base-chart-xy {:title title
+                       :width width
+                       :series-render-style XYSeries$XYSeriesRenderStyle/Line
+                       :y-axis-logarithmic true
+                       :marker-size 10
+                       :height height
+                       :series series}))
