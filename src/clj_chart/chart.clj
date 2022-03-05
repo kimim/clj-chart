@@ -19,7 +19,7 @@
                              :style {:series-style :bar}
                              :series series}))
 
-(defn step
+#_(defn step
   "Create Step chart"
   [{:keys [title width height x-axis y-axis series]
     :or {title "Step Chart" width 600 height 400 x-axis "X" y-axis "Y"}}]
@@ -38,6 +38,17 @@
                        :width width
                        :series-render-style XYSeries$XYSeriesRenderStyle/Line
                        :marker-size 10
+                       :height height
+                       :series series}))
+
+(defn step
+  "Create Step chart"
+  [{:keys [title width height series]
+    :or {title "Line Chart" width 600 height 400}}]
+  (base/base-chart-xy {:title title
+                       :width width
+                       :series-render-style XYSeries$XYSeriesRenderStyle/Step
+                       :marker-size 0
                        :height height
                        :series series}))
 
