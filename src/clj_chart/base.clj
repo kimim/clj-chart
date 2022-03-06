@@ -39,7 +39,7 @@
 (defn base-chart-category
   "Base Category Chart"
   [{:keys [title width height x-axis y-axis style series ]
-    :or {title "Bubble Chart" width 600 height 400 }}]
+    :or {title "Category Chart" width 600 height 400 }}]
   (let [chart (-> (CategoryChartBuilder.)
                   (.width width)
                   (.height height)

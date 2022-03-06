@@ -19,16 +19,22 @@
                              :style {:series-style :bar}
                              :series series}))
 
-#_(defn step
-  "Create Step chart"
-  [{:keys [title width height x-axis y-axis series]
-    :or {title "Step Chart" width 600 height 400 x-axis "X" y-axis "Y"}}]
-  (base/base-chart-category {:title title :width width :height height
-                             :x-axis x-axis :y-axis y-axis
-                             :style {:series-style :step
-                                     :overlap true}
-                             :series
-                             (map #(assoc % :style {:fill-color (Color. 0 0 0 0)}) series)}))
+(defn histogram
+  "Create a histogram chart"
+  [{:keys [title width height x-axis y-axis series min max bins]
+    :or {title "histogram" width 600 height 400}}]
+  (let [get-serie (fn [serie]
+                    (let [histogram (if (and min max)
+                                      (Histogram. (second serie) bins min max)
+                                      (Histogram. (second serie) bins))]
+                      {:name (first serie)
+                       :xs (.getxAxisData histogram)
+                       :ys (.getyAxisData histogram)}))
+        new-series (map get-serie series)]
+    (base/base-chart-category {:title title :width width :height height
+                               :x-axis x-axis :y-axis y-axis
+                               :style {:series-style :bar}
+                               :series new-series})))
 
 (defn line
   "Create Line chart"
@@ -125,27 +131,6 @@
                        :marker-size 10
                        :height height
                        :series series}))
-
-(defn histogram
-  "Create a histogram chart"
-  [{:keys [title width height x-axis y-axis series min max bins]
-    :or {title "histogram" width 600 height 400}}]
-  (let [chart (-> (CategoryChartBuilder.)
-                  (.width width)
-                  (.height height)
-                  (.title title)
-                  (.xAxisTitle x-axis)
-                  (.yAxisTitle y-axis)
-                  (.build))]
-    (doseq [serie series]
-      (let [histogram (if (and min max)
-                        (Histogram. (second serie) bins min max)
-                        (Histogram. (second serie) bins))]
-        (.addSeries chart
-                    (first serie)
-                    (.getxAxisData histogram)
-                    (.getyAxisData histogram))))
-    chart))
 
 (defn logarithmic-line
   "Create Logarithmic Line chart"
