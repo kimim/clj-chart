@@ -38,12 +38,12 @@
 
 (defn line
   "Create Line chart"
-  [{:keys [title width height series]
-    :or {title "Line Chart" width 600 height 400}}]
+  [{:keys [title width height series marker-size]
+    :or {title "Line Chart" width 600 height 400 marker-size 0}}]
   (base/base-chart-xy {:title title
                        :width width
                        :series-render-style XYSeries$XYSeriesRenderStyle/Line
-                       :marker-size 10
+                       :marker-size marker-size
                        :height height
                        :series series}))
 
