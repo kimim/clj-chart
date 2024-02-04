@@ -1,26 +1,26 @@
 {:paths ["src"]
 
  :deps
- {org.clojure/clojure           {:mvn/version "1.10.3"}
-  org.knowm.xchart/xchart       {:mvn/version "3.8.1"}}
+ {org.clojure/clojure           {:mvn/version "1.11.1"}
+  org.knowm.xchart/xchart       {:mvn/version "3.8.7"}}
 
  :aliases
  {:codox {:extra-deps {codox/codox {:mvn/version "0.10.8"}
                        codox-theme-rdash/codox-theme-rdash {:mvn/version  "0.1.2"}}
           :exec-fn codox.main/generate-docs
           :exec-args
-          {:project {:name "clj-djl"}
+          {:project {:name "clj-chart"}
            :metadata {:doc/format :markdown}
            :themes [:rdash]
            :source-paths ["src"]
-           :source-uri "https://github.com/scicloj/clj-djl/blob/master/{filepath}#L{line}"
+           :source-uri "https://github.com/kimim/clj-chart/blob/master/{filepath}#L{line}"
            :output-path "docs"}}
 
-  :build {:extra-deps {io.github.seancorfield/build-clj
-                       {:git/tag "v0.8.0" :git/sha "9bd8b8a"}}
+  :build {:deps {io.github.clojure/tools.build {:mvn/version "0.9.6"}
+                 slipset/deps-deploy {:mvn/version "0.2.1"}}
           :ns-default build}
 
+  ;; clj -M:test
   :test {:extra-paths ["test"]
-         :extra-deps {io.github.cognitect-labs/test-runner
-                      {:git/tag "v0.5.1" :git/sha "dfb30dd"}}
-         :main-opts ["-m" "cognitect.test-runner"]}}}
+         :extra-deps {lambdaisland/kaocha {:mvn/version "1.87.1366"}}
+         :main-opts ["-m" "kaocha.runner"]}}}
