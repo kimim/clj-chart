@@ -17,4 +17,4 @@ jobs:
       with:
         cli: 1.10.1.693              # Clojure CLI based on tools.deps    
     - name: Run tests
-      run: clj -M:test
+      run: clojure -M:test
