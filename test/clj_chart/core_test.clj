@@ -1,7 +1,7 @@
-(ns kimim.clj-chart-test
+(ns clj-chart.core-test
   (:require
     [clojure.test :refer :all]
-    [kimim.clj-chart :as c]))
+    [clj-chart.core :as c]))
 
 (deftest quick-test
   (testing "FIXME, I fail."

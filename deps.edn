@@ -16,6 +16,9 @@
            :source-uri "https://github.com/kimim/clj-chart/blob/master/{filepath}#L{line}"
            :output-path "docs"}}
 
+  ;; clj -T:build ci
+  ;; clj -T:build deploy
+  ;; clj -T:build test
   :build {:deps {io.github.clojure/tools.build {:mvn/version "0.9.6"}
                  slipset/deps-deploy {:mvn/version "0.2.1"}}
           :ns-default build}

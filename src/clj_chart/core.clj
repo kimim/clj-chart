@@ -1,4 +1,4 @@
-(ns kimim.clj-chart
+(ns clj-chart.core
   (:import
    (org.knowm.xchart SwingWrapper
                      VectorGraphicsEncoder
