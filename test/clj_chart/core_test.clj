@@ -11,12 +11,30 @@
 
 (deftest quick-test
   (testing "create quick chart."
-    (let [x [1.0 2.0 3.0]
-          y [1.0 4.0 9.0]]
-      (save-check-delete (c/quick-xy x y)))
+    (save-check-delete (c/quick-xy
+                        [1 2 3]
+                        [1 4 9]))
 
-    (let [ds [[1.0 1.0][2.0 3.0]]]
-      (save-check-delete (c/quick-seq ds)))
+    (save-check-delete (c/quick-xy
+                        [1.0 2.0 3.0]
+                        [1.0 4.0 9.0]))
 
-    (let [ds [{:x 1.0 :y 1.0} {:x 5.0 :y 1.0} {:x 2.0 :y 3.0}]]
-      (save-check-delete (c/quick-mapseq ds)))))
+    (save-check-delete (c/quick-seq
+                        [[1 1]
+                         [2 4]
+                         [3 9]]))
+
+    (save-check-delete (c/quick-seq
+                        [[1.0 1.0]
+                         [2.0 4.0]
+                         [3.0 9.0]]))
+
+    (save-check-delete (c/quick-mapseq
+                        [{:x 1 :y 1}
+                         {:x 2 :y 4}
+                         {:x 3 :y 9}]))
+
+    (save-check-delete (c/quick-mapseq
+                        [{:x 1.0 :y 1.0}
+                         {:x 5.0 :y 1.0}
+                         {:x 2.0 :y 3.0}]))))
