@@ -1,5 +1,5 @@
 #+TITLE: clj-chart demo
-[[https://clojars.org/im.kimi/clj-chart][https://img.shields.io/clojars/v/im.kimi/clj-chart.svg]]
+[[https://clojars.org/io.github.kimim/clj-chart][https://img.shields.io/clojars/v/io.github.kimim/clj-chart.svg]]
 
 * Quick Chart
 
